@@ -118,7 +118,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-4">
+    <div className="flex-1 flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md bg-emerald-50 rounded-2xl shadow-lg shadow-emerald-200/50 p-8 border border-emerald-100">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-teal-500 mb-2">우리 반 공부숲</h1>

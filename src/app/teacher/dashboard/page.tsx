@@ -47,7 +47,7 @@ export default function TeacherDashboard() {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="flex-1 bg-slate-50 flex flex-col">
       {/* Header */}
       <header className="bg-emerald-50 shadow-sm shadow-emerald-100/50 px-6 py-4 flex justify-between items-center border-b border-emerald-200">
         <div>
