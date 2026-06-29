@@ -157,7 +157,7 @@ export default function LoginPage() {
                       value={classCode}
                       onChange={(e) => setClassCode(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-teal-500 transition-all"
-                      placeholder="예: 2024-3-1"
+                      placeholder="예: forest1"
                     />
                   </div>
                   <div>
