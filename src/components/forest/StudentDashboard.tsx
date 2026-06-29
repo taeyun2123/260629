@@ -42,14 +42,14 @@ export default function StudentDashboard({ user }: { user: UserData }) {
     }
   };
 
-  if (loading) return <div className="text-gray-500">불러오는 중...</div>;
+  if (loading) return <div className="text-slate-500">불러오는 중...</div>;
 
   return (
     <div className="flex flex-col h-full">
-      <h2 className="text-xl font-semibold text-gray-800 mb-6">나의 공부 목표</h2>
+      <h2 className="text-xl font-semibold text-emerald-950 mb-6">나의 공부 목표</h2>
       
       {goals.length === 0 ? (
-        <div className="text-center text-gray-500 flex-1 flex items-center justify-center">
+        <div className="text-center text-slate-500 flex-1 flex items-center justify-center">
           아직 설정된 목표가 없어요.<br/>상단의 버튼을 눌러 목표를 세워보세요!
         </div>
       ) : (
@@ -59,11 +59,11 @@ export default function StudentDashboard({ user }: { user: UserData }) {
             const isToday = goal.date === today;
             
             return (
-              <div key={goal.id} className="relative pl-6 border-l-2 border-gray-100">
-                <div className="absolute w-3 h-3 bg-point-blue rounded-full -left-[7px] top-1.5" />
-                <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-                  <div className="text-xs text-gray-400 mb-2">{goal.date} {isToday && "(오늘)"}</div>
-                  <p className="text-gray-800 font-medium mb-3">{goal.goalText}</p>
+              <div key={goal.id} className="relative pl-6 border-l-2 border-emerald-100">
+                <div className="absolute w-3 h-3 bg-cyan-500 rounded-full -left-[7px] top-1.5" />
+                <div className="bg-slate-50 rounded-xl p-4 border border-emerald-100">
+                  <div className="text-xs text-slate-400 mb-2">{goal.date} {isToday && "(오늘)"}</div>
+                  <p className="text-emerald-950 font-medium mb-3">{goal.goalText}</p>
                   
                   {goal.photoUrl && (
                     <div className="mb-3">
@@ -71,13 +71,13 @@ export default function StudentDashboard({ user }: { user: UserData }) {
                     </div>
                   )}
                   {goal.comment && (
-                    <p className="text-sm text-gray-600 mb-3 bg-white p-2 rounded-lg italic">
+                    <p className="text-sm text-slate-600 mb-3 bg-emerald-50 p-2 rounded-lg italic">
                       "{goal.comment}"
                     </p>
                   )}
 
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-medium text-gray-500">내 평가:</span>
+                    <span className="text-xs font-medium text-slate-500">내 평가:</span>
                     <div className="flex gap-1">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <button
@@ -90,7 +90,7 @@ export default function StudentDashboard({ user }: { user: UserData }) {
                             size={20}
                             className={
                               star <= (goal.rating || 0)
-                                ? "text-point-blue fill-point-blue"
+                                ? "text-cyan-500 fill-cyan-500"
                                 : "text-gray-300"
                             }
                           />

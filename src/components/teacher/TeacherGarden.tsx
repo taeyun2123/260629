@@ -50,15 +50,15 @@ export default function TeacherGarden({ classCode }: { classCode: string }) {
     };
   }, [classCode]);
 
-  if (loading) return <div className="text-gray-500">텃밭을 불러오는 중...</div>;
+  if (loading) return <div className="text-slate-500">텃밭을 불러오는 중...</div>;
 
   return (
     <div className="h-full flex flex-col">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold text-gray-800">학급 텃밭 현황</h2>
-        <div className="text-sm bg-gray-100 text-gray-600 px-3 py-1 rounded-full flex gap-2">
+        <h2 className="text-xl font-semibold text-emerald-950">학급 텃밭 현황</h2>
+        <div className="text-sm bg-slate-100 text-slate-600 px-3 py-1 rounded-full flex gap-2">
           <span>총 {classmates.length}명</span>
-          <span className="font-semibold text-primary-olive">
+          <span className="font-semibold text-teal-500">
             완료 {Object.keys(todayGoals).length}명
           </span>
         </div>
@@ -75,33 +75,33 @@ export default function TeacherGarden({ classCode }: { classCode: string }) {
               <div
                 key={mate.uid}
                 className={`aspect-square rounded-2xl border ${
-                  hasVerified ? "bg-primary-olive/10 border-primary-olive/30" : "bg-gray-50 border-gray-200"
+                  hasVerified ? "bg-teal-500/10 border-teal-500/30" : "bg-slate-50 border-emerald-200"
                 } flex flex-col items-center justify-center p-3 relative group`}
               >
-                <div className={`relative mb-2 ${hasVerified ? "text-primary-olive" : "text-gray-400"}`}>
+                <div className={`relative mb-2 ${hasVerified ? "text-teal-500" : "text-slate-400"}`}>
                   {hasVerified ? <TreePine size={40} /> : <Sprout size={40} />}
-                  <div className="absolute -bottom-1 -right-2 bg-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold text-gray-700 shadow-sm border border-gray-100">
+                  <div className="absolute -bottom-1 -right-2 bg-emerald-50 rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold text-slate-700 shadow-sm shadow-emerald-100/50 border border-emerald-100">
                     Lv.{level}
                   </div>
                 </div>
                 
-                <span className="text-xs font-semibold text-gray-800 truncate w-full text-center">
+                <span className="text-xs font-semibold text-emerald-950 truncate w-full text-center">
                   {mate.name}
                 </span>
                 
                 {hasVerified ? (
-                  <span className="text-[10px] text-white mt-1 bg-primary-olive px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] text-white mt-1 bg-teal-500 px-2 py-0.5 rounded-full">
                     인증완료
                   </span>
                 ) : (
-                  <span className="text-[10px] text-gray-500 mt-1 bg-gray-200 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] text-slate-500 mt-1 bg-gray-200 px-2 py-0.5 rounded-full">
                     미인증
                   </span>
                 )}
 
                 {/* Tooltip for goal text */}
                 {hasVerified && goal.goalText && (
-                  <div className="absolute hidden group-hover:block z-10 bottom-full mb-2 bg-gray-800 text-white text-xs p-2 rounded-lg w-40 text-center shadow-lg pointer-events-none">
+                  <div className="absolute hidden group-hover:block z-10 bottom-full mb-2 bg-gray-800 text-white text-xs p-2 rounded-lg w-40 text-center shadow-lg shadow-emerald-200/50 pointer-events-none">
                     {goal.goalText}
                     <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-800" />
                   </div>

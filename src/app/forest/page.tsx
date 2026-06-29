@@ -49,14 +49,14 @@ export default function ForestPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white shadow-sm px-6 py-4 flex justify-between items-center border-b border-gray-100">
+      <header className="bg-emerald-50 shadow-sm shadow-emerald-100/50 px-6 py-4 flex justify-between items-center border-b border-emerald-100">
         <div>
-          <h1 className="text-2xl font-bold text-primary-olive">우리 반 공부숲</h1>
-          <p className="text-sm text-gray-500">{user.classCode} 반 - {user.name} 님 환영합니다!</p>
+          <h1 className="text-2xl font-bold text-teal-500">우리 반 공부숲</h1>
+          <p className="text-sm text-slate-500">{user.classCode} 반 - {user.name} 님 환영합니다!</p>
         </div>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-primary-olive hover:bg-primary-olive-light text-white px-6 py-3 rounded-2xl font-medium shadow-md transition-all flex items-center gap-2"
+          className="bg-teal-500 hover:bg-teal-500-light text-white px-6 py-3 rounded-2xl font-medium shadow-md shadow-emerald-200/50 transition-all flex items-center gap-2"
         >
           오늘의 공부숲 가꾸기
         </button>
@@ -65,12 +65,12 @@ export default function ForestPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto p-6 flex flex-col lg:flex-row gap-6">
         {/* Left: Dashboard (30%) */}
-        <aside className="w-full lg:w-[30%] bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
+        <aside className="w-full lg:w-[30%] bg-emerald-50 rounded-2xl shadow-sm shadow-emerald-100/50 p-6 border border-emerald-100">
           <StudentDashboard user={user} />
         </aside>
 
         {/* Right: Class Garden (70%) */}
-        <section className="w-full lg:w-[70%] bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
+        <section className="w-full lg:w-[70%] bg-emerald-50 rounded-2xl shadow-sm shadow-emerald-100/50 p-6 border border-emerald-100">
           <ClassGarden user={user} />
         </section>
       </main>

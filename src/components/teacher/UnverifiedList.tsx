@@ -83,16 +83,16 @@ export default function UnverifiedList({ classCode }: { classCode: string }) {
   return (
     <div className="h-full flex flex-col">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-emerald-950 flex items-center gap-2">
           <Bell size={20} className="text-yellow-500" />
           미인증 학생 ({unverifiedStudents.length}명)
         </h2>
       </div>
 
       {loading ? (
-        <div className="flex-1 flex justify-center items-center text-sm text-gray-500">불러오는 중...</div>
+        <div className="flex-1 flex justify-center items-center text-sm text-slate-500">불러오는 중...</div>
       ) : unverifiedStudents.length === 0 ? (
-        <div className="flex-1 flex flex-col justify-center items-center text-sm text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+        <div className="flex-1 flex flex-col justify-center items-center text-sm text-slate-500 bg-slate-50 rounded-xl border border-dashed border-emerald-200">
           <span className="text-2xl mb-2">🎉</span>
           전원 인증 완료!
         </div>
@@ -101,17 +101,17 @@ export default function UnverifiedList({ classCode }: { classCode: string }) {
           {unverifiedStudents.map(student => {
             const isNudging = nudgingIds.has(student.uid);
             return (
-              <div key={student.uid} className="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-100">
+              <div key={student.uid} className="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-emerald-100">
                 <div>
-                  <div className="font-medium text-gray-800">{student.name}</div>
-                  <div className="text-xs text-gray-500">학번: {student.studentId || "-"}</div>
+                  <div className="font-medium text-emerald-950">{student.name}</div>
+                  <div className="text-xs text-slate-500">학번: {student.studentId || "-"}</div>
                 </div>
                 <button
                   onClick={() => handleNudge(student.uid)}
                   disabled={student.is_nudged || isNudging}
                   className={`flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                     student.is_nudged
-                      ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                      ? "bg-gray-200 text-slate-500 cursor-not-allowed"
                       : "bg-yellow-100 text-yellow-700 hover:bg-yellow-200"
                   }`}
                 >

@@ -46,15 +46,15 @@ export default function VerifiedGallery({ classCode }: { classCode: string }) {
 
   return (
     <div className="h-full flex flex-col">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
-        <ImageIcon size={20} className="text-point-blue" />
+      <h2 className="text-lg font-semibold text-emerald-950 mb-4 flex items-center gap-2">
+        <ImageIcon size={20} className="text-cyan-500" />
         오늘의 인증 사진
       </h2>
 
       {loading ? (
-        <div className="flex-1 flex justify-center items-center text-sm text-gray-500">불러오는 중...</div>
+        <div className="flex-1 flex justify-center items-center text-sm text-slate-500">불러오는 중...</div>
       ) : items.length === 0 ? (
-        <div className="flex-1 flex justify-center items-center text-sm text-gray-500">
+        <div className="flex-1 flex justify-center items-center text-sm text-slate-500">
           아직 올라온 사진이 없습니다.
         </div>
       ) : (
@@ -63,7 +63,7 @@ export default function VerifiedGallery({ classCode }: { classCode: string }) {
             <div
               key={item.id}
               onClick={() => setSelectedItem(item)}
-              className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer bg-gray-100"
+              className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer bg-slate-100"
             >
               <img src={item.photoUrl!} alt="인증샷" className="w-full h-full object-cover transition-transform group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -77,7 +77,7 @@ export default function VerifiedGallery({ classCode }: { classCode: string }) {
       {/* Expanded Modal */}
       {selectedItem && (
         <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-          <div className="relative bg-white rounded-2xl overflow-hidden max-w-2xl w-full">
+          <div className="relative bg-emerald-50 rounded-2xl overflow-hidden max-w-2xl w-full">
             <button onClick={() => setSelectedItem(null)} className="absolute top-4 right-4 text-white bg-black/50 p-1 rounded-full hover:bg-black/70 z-10">
               <X size={24} />
             </button>
@@ -86,9 +86,9 @@ export default function VerifiedGallery({ classCode }: { classCode: string }) {
             </div>
             <div className="p-5">
               <h3 className="font-bold text-lg mb-1">{selectedItem.studentName} 학생</h3>
-              <p className="text-gray-700 font-medium mb-2">목표: {selectedItem.goalText}</p>
+              <p className="text-slate-700 font-medium mb-2">목표: {selectedItem.goalText}</p>
               {selectedItem.comment && (
-                <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-xl italic">"{selectedItem.comment}"</p>
+                <p className="text-sm text-slate-600 bg-slate-50 p-3 rounded-xl italic">"{selectedItem.comment}"</p>
               )}
             </div>
           </div>

@@ -119,18 +119,18 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+      <div className="w-full max-w-md bg-emerald-50 rounded-2xl shadow-lg shadow-emerald-200/50 p-8 border border-emerald-100">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary-olive mb-2">우리 반 공부숲</h1>
-          <p className="text-gray-500">학급의 성장을 함께 가꾸어요</p>
+          <h1 className="text-3xl font-bold text-teal-500 mb-2">우리 반 공부숲</h1>
+          <p className="text-slate-500">학급의 성장을 함께 가꾸어요</p>
         </div>
 
         {!showPasswordChange ? (
           <>
-            <div className="flex bg-gray-100 rounded-xl p-1 mb-8">
+            <div className="flex bg-slate-100 rounded-xl p-1 mb-8">
               <button
                 className={`flex-1 py-2 rounded-xl text-sm font-medium transition-colors ${
-                  activeTab === "STUDENT" ? "bg-white shadow text-primary-olive" : "text-gray-500 hover:text-gray-700"
+                  activeTab === "STUDENT" ? "bg-emerald-50 shadow text-teal-500" : "text-slate-500 hover:text-slate-700"
                 }`}
                 onClick={() => { setActiveTab("STUDENT"); setError(""); }}
               >
@@ -138,7 +138,7 @@ export default function LoginPage() {
               </button>
               <button
                 className={`flex-1 py-2 rounded-xl text-sm font-medium transition-colors ${
-                  activeTab === "TEACHER" ? "bg-white shadow text-primary-olive" : "text-gray-500 hover:text-gray-700"
+                  activeTab === "TEACHER" ? "bg-emerald-50 shadow text-teal-500" : "text-slate-500 hover:text-slate-700"
                 }`}
                 onClick={() => { setActiveTab("TEACHER"); setError(""); }}
               >
@@ -150,50 +150,50 @@ export default function LoginPage() {
               {activeTab === "STUDENT" ? (
                 <>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">반 인증번호</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">반 인증번호</label>
                     <input
                       type="text"
                       required
                       value={classCode}
                       onChange={(e) => setClassCode(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-primary-olive transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-teal-500 transition-all"
                       placeholder="예: 2024-3-1"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">학번</label>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">학번</label>
                     <input
                       type="text"
                       required
                       value={studentId}
                       onChange={(e) => setStudentId(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-primary-olive transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-teal-500 transition-all"
                       placeholder="예: 01"
                     />
                   </div>
                 </>
               ) : (
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">이메일</label>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">이메일</label>
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-primary-olive transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-teal-500 transition-all"
                     placeholder="teacher@school.com"
                   />
                 </div>
               )}
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">비밀번호</label>
+                <label className="block text-sm font-medium text-slate-700 mb-1">비밀번호</label>
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-primary-olive transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-teal-500 transition-all"
                   placeholder="••••••••"
                 />
               </div>
@@ -203,7 +203,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-primary-olive hover:bg-primary-olive-light text-white py-3 rounded-xl font-medium transition-colors disabled:opacity-50 mt-4"
+                className="w-full bg-teal-500 hover:bg-teal-500-light text-white py-3 rounded-xl font-medium transition-colors disabled:opacity-50 mt-4"
               >
                 {loading ? "로그인 중..." : "로그인"}
               </button>
@@ -212,29 +212,29 @@ export default function LoginPage() {
         ) : (
           <form onSubmit={handlePasswordChange} className="space-y-4">
             <div className="text-center mb-6">
-              <h2 className="text-xl font-semibold text-gray-800">새 비밀번호 설정</h2>
-              <p className="text-sm text-gray-500 mt-2">초기 비밀번호를 안전한 새 비밀번호로 변경해주세요.</p>
+              <h2 className="text-xl font-semibold text-emerald-950">새 비밀번호 설정</h2>
+              <p className="text-sm text-slate-500 mt-2">초기 비밀번호를 안전한 새 비밀번호로 변경해주세요.</p>
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">새 비밀번호</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">새 비밀번호</label>
               <input
                 type="password"
                 required
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-primary-olive transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-teal-500 transition-all"
                 placeholder="6자리 이상"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">비밀번호 확인</label>
+              <label className="block text-sm font-medium text-slate-700 mb-1">비밀번호 확인</label>
               <input
                 type="password"
                 required
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-primary-olive transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-primary-olive/50 focus:border-teal-500 transition-all"
                 placeholder="다시 한번 입력"
               />
             </div>
@@ -244,7 +244,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-point-blue hover:bg-point-blue-light text-white py-3 rounded-xl font-medium transition-colors disabled:opacity-50 mt-4"
+              className="w-full bg-cyan-500 hover:bg-cyan-500-light text-white py-3 rounded-xl font-medium transition-colors disabled:opacity-50 mt-4"
             >
               {loading ? "변경 중..." : "비밀번호 변경 완료"}
             </button>

@@ -71,14 +71,14 @@ export default function WeeklyChart({ classCode }: { classCode: string }) {
   return (
     <div className="h-full flex flex-col">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
-          <TrendingUp size={20} className="text-point-blue" />
+        <h2 className="text-lg font-semibold text-emerald-950 flex items-center gap-2">
+          <TrendingUp size={20} className="text-cyan-500" />
           최근 7일 인증률 추이
         </h2>
       </div>
 
       {loading ? (
-        <div className="flex-1 flex justify-center items-center text-sm text-gray-500">차트를 불러오는 중...</div>
+        <div className="flex-1 flex justify-center items-center text-sm text-slate-500">차트를 불러오는 중...</div>
       ) : (
         <div className="flex-1 flex items-end gap-2 sm:gap-4 mt-2">
           {chartData.map((data, i) => {
@@ -92,16 +92,16 @@ export default function WeeklyChart({ classCode }: { classCode: string }) {
                   </div>
                   {/* Bar */}
                   <div 
-                    className="w-full max-w-[40px] bg-primary-olive/20 group-hover:bg-primary-olive/40 rounded-t-lg transition-all relative"
+                    className="w-full max-w-[40px] bg-teal-500/20 group-hover:bg-teal-500/40 rounded-t-lg transition-all relative"
                     style={{ height: `${Math.max(data.rate, 5)}%` }} // min height 5% for visibility
                   >
                     <div 
-                      className="absolute bottom-0 left-0 right-0 bg-primary-olive rounded-t-lg transition-all"
+                      className="absolute bottom-0 left-0 right-0 bg-teal-500 rounded-t-lg transition-all"
                       style={{ height: `${data.rate}%` }}
                     />
                   </div>
                 </div>
-                <div className="text-[10px] sm:text-xs text-gray-500 mt-2 whitespace-nowrap">
+                <div className="text-[10px] sm:text-xs text-slate-500 mt-2 whitespace-nowrap">
                   {i === 6 ? "오늘" : shortDate}
                 </div>
               </div>

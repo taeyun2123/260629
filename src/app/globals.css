@@ -2,21 +2,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfdf9; /* soft off-white */
-  --foreground: #2d3748;
-  --primary-olive: #5b7251; /* olive green main */
-  --primary-olive-light: #7c9b6f;
-  --point-blue: #4b749f; /* garden blue point */
-  --point-blue-light: #6a95c4;
+  --background: #f8fafc; /* slate-50 */
+  --foreground: #022c22; /* emerald-950 */
+  --primary-mint: #14b8a6; /* teal-500 */
+  --primary-mint-light: #2dd4bf; /* teal-400 */
+  --accent-cyan: #06b6d4; /* cyan-500 */
+  --accent-cyan-light: #22d3ee; /* cyan-400 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-olive-500: var(--primary-olive);
-  --color-olive-400: var(--primary-olive-light);
-  --color-blue-500: var(--point-blue);
-  --color-blue-400: var(--point-blue-light);
+  --color-mint-500: var(--primary-mint);
+  --color-mint-400: var(--primary-mint-light);
+  --color-cyan-500: var(--accent-cyan);
+  --color-cyan-400: var(--accent-cyan-light);
   --font-sans: "Noto Sans KR", sans-serif;
 }
 

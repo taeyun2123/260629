@@ -47,16 +47,16 @@ export default function TeacherDashboard() {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Header */}
-      <header className="bg-white shadow-sm px-6 py-4 flex justify-between items-center border-b border-gray-200">
+      <header className="bg-emerald-50 shadow-sm shadow-emerald-100/50 px-6 py-4 flex justify-between items-center border-b border-emerald-200">
         <div>
-          <h1 className="text-2xl font-bold text-primary-olive">우리 반 공부숲 - 교사 대시보드</h1>
-          <p className="text-sm text-gray-500">{user.classCode} 반 - {user.name} 선생님</p>
+          <h1 className="text-2xl font-bold text-teal-500">우리 반 공부숲 - 교사 대시보드</h1>
+          <p className="text-sm text-slate-500">{user.classCode} 반 - {user.name} 선생님</p>
         </div>
         <button
           onClick={() => auth.signOut()}
-          className="text-sm text-gray-500 hover:text-gray-700"
+          className="text-sm text-slate-500 hover:text-slate-700"
         >
           로그아웃
         </button>
@@ -67,23 +67,23 @@ export default function TeacherDashboard() {
         {/* Top 3 columns */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 h-[500px]">
           {/* Left: Gallery */}
-          <div className="lg:col-span-1 bg-white rounded-2xl shadow-sm border border-gray-100 p-5 overflow-hidden flex flex-col">
+          <div className="lg:col-span-1 bg-emerald-50 rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-100 p-5 overflow-hidden flex flex-col">
             <VerifiedGallery classCode={user.classCode} />
           </div>
 
           {/* Center: Garden */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-5 overflow-hidden flex flex-col">
+          <div className="lg:col-span-2 bg-emerald-50 rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-100 p-5 overflow-hidden flex flex-col">
             <TeacherGarden classCode={user.classCode} />
           </div>
 
           {/* Right: Unverified List */}
-          <div className="lg:col-span-1 bg-white rounded-2xl shadow-sm border border-gray-100 p-5 overflow-hidden flex flex-col">
+          <div className="lg:col-span-1 bg-emerald-50 rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-100 p-5 overflow-hidden flex flex-col">
             <UnverifiedList classCode={user.classCode} />
           </div>
         </div>
 
         {/* Bottom: Chart */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 h-64">
+        <div className="bg-emerald-50 rounded-2xl shadow-sm shadow-emerald-100/50 border border-emerald-100 p-5 h-64">
           <WeeklyChart classCode={user.classCode} />
         </div>
       </main>
